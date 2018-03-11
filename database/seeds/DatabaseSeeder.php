@@ -20,7 +20,9 @@ class DatabaseSeeder extends Seeder
         ])->pluck('id')->toArray();
 
         factory(Task::class,50)->create([
-            'status_id' => array_rand($status_ids)
+            'status_id' => function () use ($status_ids){
+                return $status_ids[array_rand($status_ids)];
+            }
         ]);
 
         factory(User::class)->create([

@@ -66,7 +66,6 @@ class TaskCrudController extends CrudController
         );
 
         $this->crud->addButtonFromView('line', 'status', 'markTaskStatusAsFinished', 'end');
-        //$this->crud->addButtonFromView('line', 'Delete', '', 'end');
     }
 
     public function store(StoreRequest $request)
